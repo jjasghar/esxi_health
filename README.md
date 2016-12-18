@@ -49,7 +49,7 @@ Here is an example Sensu check:
 Don't forget you'll need to inject `rbvmomi` into the embedded sensu ruby install:
 
 ```shell
-$ /opt/sensu/embedded/bin/gem rbvmomi
+$ /opt/sensu/embedded/bin/gem install rbvmomi
 ```
 
 ## Contributing
