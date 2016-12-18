@@ -46,10 +46,12 @@ Here is an example Sensu check:
 }
 ```
 
-Don't forget you'll need to inject `rbvmomi` into the embedded sensu ruby install:
+It seems that Sensu can't actually run the `rbvmomi` gem directly. I suggest installing
+ruby on the machine and making the `sensu` user run the ruby version you install,
+for instance the following. Yes, it's gross, but hey it works. :metal:
 
-```shell
-$ /opt/sensu/embedded/bin/gem install rbvmomi
+```json
+    "command": "sudo /root/.rbenv/shims/ruby /root/esxi_health/checks/esxi_cpu_stats.rb  --hostname ESXIHOST -n NAMEOFESXIHOST -P USERNAMEPASSWORD -u USERNAME -p 60",
 ```
 
 ## Contributing
