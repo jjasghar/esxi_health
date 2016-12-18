@@ -53,7 +53,7 @@ cpu_percentage = ((stats[:usedCPU]/stats[:totalCPU].to_f)*100).round(1)
 
 case
 when options[:percent] >= cpu_percentage
-  puts "OK: ESXi is under the max cpu usage using #{cpu_percenage}%"
+  puts "OK: ESXi is under the max cpu usage using #{cpu_percentage}%"
   exit 2
 when options[:percent] < cpu_percentage
   puts "Critical: ESXi has a higher than ideal cpu usage at #{cpu_percentage}%"
